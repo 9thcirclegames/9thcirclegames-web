@@ -62,8 +62,19 @@ Vagrant.configure(2) do |config|
     config.vbguest.auto_update = false
   end
 
+  vagrant_arg = ARGV[0]
+  if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/#{_conf['hostname']}/*").empty? and vagrant_arg == 'up'
+    print "Please insert your 9th Circle Games Premium Key: "
+    premium_key = STDIN.gets.chomp
+  end
+
+
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-pre.sh')) then
-    config.vm.provision :shell, :path => File.join( File.dirname(__FILE__), 'provision-pre.sh' )
+    config.vm.provision :shell do |s|
+      s.env = {'NINTHCIRCLEGAME_PREMIUM_KEY' => premium_key}
+      s.path = File.join( File.dirname(__FILE__), 'provision-pre.sh' )
+      s.privileged = FALSE
+    end
   end
 
   config.vm.provider :virtualbox do |vb|
@@ -108,6 +119,10 @@ Vagrant.configure(2) do |config|
   end
 
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-post.sh')) then
-    config.vm.provision :shell, :privileged => false, :path => File.join( File.dirname(__FILE__), 'provision-post.sh' )
+    config.vm.provision :shell do |s|
+      s.env = {'NINTHCIRCLEGAME_PREMIUM_KEY' => premium_key}
+      s.path = File.join( File.dirname(__FILE__), 'provision-post.sh' )
+      s.privileged = FALSE
+    end
   end
 end

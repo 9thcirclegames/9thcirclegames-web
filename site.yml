@@ -59,14 +59,8 @@ plugins:
   - akismet
   - contact-form-7
   - cookie-notice
-  - crayon-syntax-highlighter
-  - regenerate-thumbnails
   - tinymce-spellcheck
   - wordpress-seo
-  - woocommerce
-  - yet-another-related-posts-plugin
-  - wp-pagenavi
-  - regenerate-thumbnails
 
 #
 # WordPress Default Theme
@@ -91,6 +85,8 @@ multisite_options: {}
 force_ssl_admin: false
 wp_debug: true
 savequeries: false
+
+gitignore: https://raw.githubusercontent.com/github/gitignore/master/WordPress.gitignore
 
 #
 # Addtional PHP code in the wp-config.php
