@@ -71,7 +71,7 @@ Vagrant.configure(2) do |config|
 
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-pre.sh')) then
     config.vm.provision :shell do |s|
-      s.env = {'NINTHCIRCLEGAME_PREMIUM_KEY' => premium_key}
+      s.env = {'NINTHCIRCLEGAMES_PREMIUM_KEY' => premium_key}
       s.path = File.join( File.dirname(__FILE__), 'provision-pre.sh' )
       s.privileged = FALSE
     end
@@ -120,7 +120,7 @@ Vagrant.configure(2) do |config|
 
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-post.sh')) then
     config.vm.provision :shell do |s|
-      s.env = {'NINTHCIRCLEGAME_PREMIUM_KEY' => premium_key}
+      s.env = {'NINTHCIRCLEGAMES_PREMIUM_KEY' => premium_key}
       s.path = File.join( File.dirname(__FILE__), 'provision-post.sh' )
       s.privileged = FALSE
     end
