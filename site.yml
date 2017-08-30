@@ -55,8 +55,6 @@ db_pass: 9thcirclegames
 #
 plugins:
   - dynamic-hostname
-  - wp-total-hacks
-  - akismet
   - contact-form-7
   - cookie-notice
   - tinymce-spellcheck

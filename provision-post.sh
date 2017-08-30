@@ -2,6 +2,8 @@
 
 set -x
 
+env
+
 # Setup Sites
 /usr/local/bin/wp --path=/var/www/html site create --slug=eden --title="Eden: Deception"
 /usr/local/bin/wp --path=/var/www/html site create --slug=woc --title="Wisdom of Cthulhu"
