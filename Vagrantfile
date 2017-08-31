@@ -64,7 +64,7 @@ Vagrant.configure(2) do |config|
 
   vagrant_arg = ARGV[0]
   if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/#{_conf['hostname']}/*").empty? and vagrant_arg == 'up'
-    print "Please insert your 9th Circle Games Premium Key: "
+    print "Please insert your 9th Circle Games Key to download Premium Content: "
     premium_key = STDIN.gets.chomp
   end
 
