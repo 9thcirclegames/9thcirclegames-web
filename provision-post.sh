@@ -22,8 +22,9 @@ git submodule update --init --recursive
 /usr/local/bin/wp --path=/var/www/html --url="http://9thcircle.dev/eden" theme activate eden
 
 ###################
-# Premium Plugins
+# Plugins Setup
 ##
+/usr/local/bin/wp --path=/var/www/html plugin uninstall hello
 /usr/local/bin/wp --path=/var/www/html plugin install https://extras.gabrielebaldassarre.com/${NINTHCIRCLEGAMES_PREMIUM_KEY}/bloom.zip
 /usr/local/bin/wp --path=/var/www/html plugin install https://extras.gabrielebaldassarre.com/${NINTHCIRCLEGAMES_PREMIUM_KEY}/monarch.zip
 
